@@ -1,1 +1,294 @@
-Under Construction
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <title>FawkesJs - NodeJs framework build on top of Express, TypeScript and Sequelize</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A NodeJs framework build on top of Express, TypeScript and Sequelize,
+      with strict swagger param checking and ACL middleware support">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css"></head>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll">
+
+    <!-- ******HEADER****** -->
+    <header id="header" class="header">
+        <div class="container">
+            <h1 class="logo pull-left">
+                <a class="scrollto" href="#promo">
+                    <span class="logo-title">FawkesJs</span>
+                </a>
+            </h1><!--//logo-->
+            <nav id="main-nav" class="main-nav navbar-right" role="navigation">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active nav-item sr-only"><a class="scrollto" href="#promo">Home</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#about">About</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#features">Features</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#docs">Docs</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#license">License</a></li>
+                        <li class="nav-item last"><a class="scrollto" href="#contact">Contact</a></li>
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </nav><!--//main-nav-->
+        </div>
+    </header><!--//header-->
+
+    <!-- ******PROMO****** -->
+    <section id="promo" class="promo section offset-header">
+        <div class="container text-center">
+            <h2 class="title">Fawkes<span class="highlight">Js</span></h2>
+            <p class="intro">A NodeJs framework build on top of Express, TypeScript and Sequelize,
+              with strict swagger param checking and ACL middleware support</p>
+            <div class="btns">
+                <a class="btn btn-cta-secondary" href="http://starter.fawkesjs.com" target="_blank">Demo</a>
+                <a class="btn btn-cta-primary" href="https://github.com/fawkesjs/fawkesjs-starter" target="_blank">Demo Code</a>
+            </div>
+            <ul class="meta list-inline">
+                <li><a href="https://github.com/fawkesjs/fawkesjs" target="_blank">View on GitHub</a></li>
+                <li><a href="https://github.com/fawkesjs/fawkesjs/tree/master/doc" target="_blank">Full Documentation</a></li>
+            </ul><!--//meta-->
+        </div><!--//container-->
+        <div class="social-media">
+            <div class="social-media-inner container text-center">
+                <ul class="list-inline">
+                    <!--// Generate github buttons: https://github.com/mdo/github-buttons -->
+                    <li class="github-star"><iframe src="http://ghbtns.com/github-btn.html?user=fawkesjs&repo=fawkesjs&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
+                    <li class="github-fork"><iframe src="http://ghbtns.com/github-btn.html?user=fawkesjs&repo=fawkesjs&type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="53" height="20"></iframe></li>
+                    <!--//
+                    <li class="github-follow"><iframe src="http://ghbtns.com/github-btn.html?user=mdo&type=follow&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></li>
+                    -->
+                </ul>
+            </div>
+        </div>
+    </section><!--//promo-->
+
+    <!-- ******ABOUT****** -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="title text-center">Why FawkesJs?</h2>
+            <p class="intro text-center">FawkesJs is inspired by Loopback and Laravel. We want to make programmers' life easier by including modular design of Laravel and build in swagger support of Loopback.</p>
+            <div class="row">
+                <div class="item col-md-4 col-sm-6 col-xs-12">
+                    <div class="icon-holder">
+                        <i class="fa fa-check-circle"></i>
+                    </div>
+                    <div class="content">
+                        <h3 class="sub-title">Optional Type Safety</h3>
+                        <p>We use Typescript as our main language and use a lot of Interface to guide you. It's recommended to use along with <a href="https://atom.io/" target="_blank">Atom</a> as your editor.</p>
+                    </div><!--//content-->
+                </div><!--//item-->
+                <div class="item col-md-4 col-sm-6 col-xs-12">
+                    <div class="icon-holder">
+                        <i class="fa fa-code"></i>
+                    </div>
+                    <div class="content">
+                        <h3 class="sub-title">Express + Swagger</h3>
+                        <p>It has built in swagger document generation. All the api endpoint has the type/strlen verification according to your <a href="http://swagger.io/" target="_blank">Swagger 2.0</a>, from GET query to POST body.</p>
+                    </div><!--//content-->
+                </div><!--//item-->
+                <div class="item col-md-4 col-sm-6 col-xs-12">
+                    <div class="icon-holder">
+                        <i class="fa fa-cogs"></i>
+                    </div>
+                    <div class="content">
+                        <h3 class="sub-title">Model View Controller</h3>
+                        <p>Model–view–controller (MVC) is a software architectural pattern for implementing user interfaces on computers. It has been adopted by many web framework.</p>
+                    </div><!--//content-->
+                </div><!--//item-->
+                <div class="clearfix visible-md"></div>
+                <div class="item col-md-4 col-sm-6 col-xs-12">
+                    <div class="icon-holder">
+                        <i class="fa fa-database"></i>
+                    </div>
+                    <div class="content">
+                        <h3 class="sub-title">Built in ORM</h3>
+                        <p>Although we already have Model, we still want our life easier by implementing Object-relational mapping (ORM). Useful when create or update database records.</p>
+                    </div><!--//content-->
+                </div><!--//item-->
+                <div class="item col-md-4 col-sm-6 col-xs-12">
+                    <div class="icon-holder">
+                        <i class="fa fa-cubes"></i>
+                    </div>
+                    <div class="content">
+                        <h3 class="sub-title">Middlewares</h3>
+                        <p>Optional middlewares such as AcessToken Middleware, ACL middleware and RestParam Middleware. You can also easily create your own middleware with Promise.</p>
+                    </div><!--//content-->
+                </div><!--//item-->
+                <div class="item col-md-4 col-sm-6 col-xs-12">
+                    <div class="icon-holder">
+                        <i class="fa fa-folder"></i>
+                    </div>
+                    <div class="content">
+                        <h3 class="sub-title">Organised Route</h3>
+                        <p>Organize api endpoint using folders structure. All the required parameters is set together with the route. Each route can be protected by ACL easily.</p>
+                    </div><!--//content-->
+                </div><!--//item-->
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//about-->
+
+    <!-- ******FEATURES****** -->
+    <section id="features" class="features section">
+        <div class="container text-center">
+            <h2 class="title">Features</h2>
+            <ul class="feature-list list-unstyled">
+                <li><i class="fa fa-check"></i> Swagger Generation</li>
+                <li><i class="fa fa-check"></i> Configure middlewares in an array</li>
+                <li><i class="fa fa-check"></i> FawkesJs-starter with User, ACL ecosystem</li>
+                <li><i class="fa fa-check"></i> Swagger Param Validation on Api Endpoint</li>
+                <li><i class="fa fa-check"></i> Organised Route in folders structure</li>
+                <li><i class="fa fa-check"></i> Model View Controller (MVC)</li>
+                <li><i class="fa fa-check"></i> ORM support</li>
+            </ul>
+        </div><!--//container-->
+    </section><!--//features-->
+
+    <!-- ******DOCS****** -->
+    <section id="docs" class="docs section">
+        <div class="container">
+            <div class="docs-inner">
+            <h2 class="title text-center">Get Started</h2>
+            <div class="block">
+                <div class="code-block">
+                    <pre><code class="language-markup">
+git clone https://github.com/fawkesjs/fawkesjs-starter
+npm install && npm run start
+                    </code></pre>
+                </div>
+            </div>
+            <div class="block">
+                <h3 class="sub-title text-center">Folder Structure</h3>
+                <div class="code-block">
+                    <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+                    <pre><code class="language-markup">
+- app
+  - bin
+  - config
+    - config.ts
+    - config.{env}.ts
+    - datasource.ts
+    - datasource.{env}.ts
+    - swagger.ts
+    - swagger.{env}.ts
+  - controller
+  - middleware
+    - index.ts
+  - model
+  - module
+  - orm
+    - index.ts
+  - route
+    - index.ts
+    - api
+      - index.ts
+      - account
+        - index.ts
+                     </code></pre>
+                </div><!--//code-block-->
+            </div><!--//block-->
+            <div class="block">
+                <h3 class="sub-title text-center">Full Documentation</h3>
+                <p class="text-center">
+                    <a class="btn btn-cta-primary" href="https://github.com/fawkesjs/fawkesjs/tree/master/doc" target="_blank">More on GitHub</a>
+                </p>
+            </div><!--//block-->
+
+            </div><!--//docs-inner-->
+        </div><!--//container-->
+    </section><!--//features-->
+
+    <!-- ******LICENSE****** -->
+    <section id="license" class="license section">
+        <div class="container">
+            <div class="license-inner">
+            <h2 class="title text-center">License</h2>
+                <div class="info">
+                    <h3>The MIT License (MIT)</h3>
+                    <p>Copyright © 2017 FawkesJs, http://www.fawkesjs.com</p>
+                    <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+                    <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+                    <p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+                </div><!--//info-->
+            </div><!--//license-inner-->
+        </div><!--//container-->
+    </section><!--//how-->
+
+    <!-- ******CONTACT****** -->
+    <section id="contact" class="contact section has-pattern">
+        <div class="container">
+            <div class="contact-inner">
+                <h2 class="title  text-center">Contact</h2>
+                <p class="intro  text-center">I hope you find this Framework useful. <br />Feel free to get in touch if you have any questions or suggestions.</p>
+                <div class="author-message">
+                    <div class="profile">
+                        <img class="img-responsive" src="assets/images/profile.png" alt="" />
+                    </div><!--//profile-->
+                    <div class="speech-bubble">
+                        <h3 class="sub-title">The Project Roadmap</h3>
+                        <p>Currently the project main focus is to standardizing swagger with express route</a>
+                        <p>The next plan will be investigating on modular plugin for FawkesJs</p>
+                        <div class="source">
+                            <span class="name"><a href="https://nghenglim.github.io" target="_blank">Liam Ng</a></span>
+                            <br />
+                            <span class="title">FawkesJs Main Author</span>
+                        </div><!--//source-->
+                    </div><!--//speech-bubble-->
+                </div><!--//author-message-->
+                <div class="clearfix"></div>
+                <div class="info text-center">
+                    <h4 class="sub-title">FawkesJs Community</h4>
+                    <ul class="social-icons list-inline">
+                        <li><a href="https://github.com/fawkesjs/fawkesjs" target="_blank"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://gitter.im/fawkesjs" target="_blank"><span class="fa icon-gitter"></span></a></li>
+                    </ul>
+                </div><!--//info-->
+            </div><!--//contact-inner-->
+        </div><!--//container-->
+    </section><!--//contact-->
+
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+        <div class="container text-center">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+</html>
